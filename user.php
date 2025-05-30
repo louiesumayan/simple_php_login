@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_email'])) {
+  header("Location: index.php");
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,9 +79,9 @@
 
 <body>
   <div class="container">
-    <h1>Welcome, <span class="highlight">KINGZ Test</span></h1>
+    <h1>Welcome, <span class="highlight"><?php echo $_SESSION['user_name']; ?></span></h1>
     <p>This is an <a href="#">user</a> page</p>
-    <button>Logout</button>
+    <button onclick="window.location.href='logout.php'">Logout</button>
   </div>
 </body>
 
