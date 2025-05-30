@@ -56,7 +56,7 @@ if (isset($_POST['login'])) {
   exit();
  }
 
- // Prepare statement with placeholder
+ // Prepare statement with placeholder 
  $stmt = $conn->prepare("SELECT id, name, email, password, role FROM users WHERE email = ?");
  $stmt->bind_param("s", $email);
  $stmt->execute();

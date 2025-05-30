@@ -1,3 +1,17 @@
+<?php
+
+session_start();
+
+$errors = [
+  'login' => $_SESSION['login_error'] ?? '',
+  'register' => $_SESSION['register_error'] ?? ''
+
+];
+
+session_unset();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
